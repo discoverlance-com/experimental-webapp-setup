@@ -1,0 +1,15 @@
+@layout.app({ title: summary })
+  <h1>
+    {{ status }} - {{ summary }}
+  </h1>
+
+  <span>
+    @svg('ic:baseline-error', {
+      class: 'w-12 h-12 block mt-8'
+    })
+  </span>
+
+  <p>
+    {{ message }}
+  </p>
+@end

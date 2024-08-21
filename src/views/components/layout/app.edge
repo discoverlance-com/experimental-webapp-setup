@@ -1,9 +1,16 @@
 
 <!DOCTYPE html>
-<html class="{{ config.colorScheme }}">
+<html
+  class="{{ config.colorScheme }}"
+  style="color-scheme : {{ config.colorScheme }};"
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{-- Stylesheet --}}
+    <link href="/static/styles/tailwind.css" rel="stylesheet" />
+
     <title>
       {{ title || "My Todos" }}
     </title>
@@ -12,6 +19,8 @@
     @endif
   </head>
   <body>
+    @include('components/layout/header')
+
     {{{ await $slots.main() }}}
   </body>
 </html>
