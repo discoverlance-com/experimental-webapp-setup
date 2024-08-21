@@ -1,0 +1,28 @@
+@layout.app({ title: "All - Todos" })
+  @slot('meta')
+    <meta name="description" content="A welcome page made with EdgeJS" />
+  @endslot
+  
+  <h1>
+    Hello {{ username }}
+    <span>
+      @svg('ic:baseline-14mp', {
+        class: 'w-6 h-6 inline-block'
+      })
+    </span>
+  </h1>
+
+  @if(todos.length)
+    <ul>
+      @each(todo in todos)
+        <li>
+          {{ todo.title }}
+        </li>
+      @endeach
+    </ul>
+  @else
+    <p>
+      No todos added yet
+    </p>
+  @end
+@end
