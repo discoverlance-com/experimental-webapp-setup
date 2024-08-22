@@ -1,8 +1,9 @@
 
 <!DOCTYPE html>
 <html
+  lang="en"
   class="{{ config.colorScheme }}"
-  style="color-scheme : {{ config.colorScheme }};"
+  style="color-scheme: {{ config.colorScheme }};"
 >
   <head>
     <meta charset="utf-8" />
@@ -10,6 +11,12 @@
 
     {{-- Stylesheet --}}
     <link href="/static/styles/tailwind.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>
       {{ title || "My Todos" }}
@@ -17,10 +24,16 @@
     @if ($slots.meta)
       {{{ await $slots.meta() }}}
     @endif
+    
+    {{-- Scripts --}}
+    <script src="/static/scripts//htmx.min.js" defer nonce="{{ nonce }}"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js" nonce="{{ nonce }}"></script>
   </head>
-  <body>
+  <body class="antialiased scroll-smooth font-sans">
     @include('components/layout/header')
 
-    {{{ await $slots.main() }}}
+    <main class="container mt-4">
+      {{{ await $slots.main() }}}
+    </main>
   </body>
 </html>

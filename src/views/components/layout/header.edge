@@ -1,10 +1,12 @@
 <header
-  class="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  class="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b shadow"
 >
   <div class="container flex h-14 max-w-screen-2xl items-center justify-between">
     <div class="mr-4 hidden md:flex">
-      <a class="mr-4 flex items-center space-x-2 lg:mr-6" href="/">        <span class="hidden font-bold lg:inline-block">myTodos</span></a>
-      <nav class="flex items-center gap-4 text-sm lg:gap-6">
+      <a class="mr-4 flex items-center space-x-2 lg:mr-6" href="/">
+        <span class="hidden font-bold lg:inline-block">myTodos</span>
+      </a>
+      <nav class="flex items-center gap-4 text-base lg:gap-6">
         @each(item in config.menu)
           <a
             class="transition-colors hover:text-foreground/80 text-foreground/60"
@@ -29,11 +31,11 @@
       <span class="sr-only">Toggle Menu</span>
     </span>
   </button>
-  <div class="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+  <div class="flex items-center justify-between space-x-2">
     <div class="w-full flex-1 md:w-auto md:flex-none">
       <nav class="flex items-center">
         <button
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground py-2 h-8 w-8 px-0"
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground py-2 h-8 w-8 px-0"
           type="button"
           id="toggle-theme"
           aria-haspopup="menu"

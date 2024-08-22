@@ -57,15 +57,16 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
 
-  @font-face {
-    font-display: swap;
-    font-family: "Inter";
-    src: url("/static/fonts/Inter-VariableFont_opsz,wght.ttf")
-      format("woff2-variations");
-    src: url("/static/fonts/Inter-VariableFont_opsz,wght.ttf") format("woff2")
-      tech("variations");
-    font-weight: 100 1000;
-    font-stretch: 25% 151%;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }

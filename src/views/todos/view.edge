@@ -1,0 +1,9 @@
+@layout.app({ title: todo.title + " - My Todos" })
+  @slot('meta')
+    <meta name="description" content="View todo - {{ todo.title }}" />
+  @endslot
+  
+  <h1 class="text-4xl font-bold text-center">
+    {{ todo.title }}
+  </h1>
+@end
